@@ -1,0 +1,296 @@
+# Workforce Analytics — Employee Attrition & Workforce Insights
+
+## 1. Project Overview
+
+Workforce Analytics is an end-to-end data analytics project focused on understanding employee attrition and identifying workforce patterns associated with employee turnover.
+
+The project combines SQL, Python, and Power BI to transform raw employee data into actionable workforce insights.
+
+### Project Workflow
+
+Raw Dataset
+→ SQL Analysis
+→ Python EDA
+→ Power BI Data Modeling
+→ Interactive Dashboard
+→ Business Insights
+
+---
+
+## 2. Business Problem
+
+Employee attrition can affect workforce stability, productivity, and hiring requirements.
+
+The objective of this project is to answer questions such as:
+
+- What is the overall employee attrition rate?
+- Which departments have higher attrition?
+- Which job roles show higher observed turnover?
+- Is overtime associated with higher attrition?
+- How does job satisfaction relate to attrition?
+- Does business travel show differences in attrition?
+- How do tenure and promotion gaps relate to attrition?
+- Are there differences in attrition across age, income, and distance-from-home groups?
+
+---
+
+## 3. Dataset
+
+The project uses the IBM HR Analytics Employee Attrition & Performance dataset.
+
+The dataset contains:
+
+- 1,470 employee records
+- 35 columns
+- Employee demographics
+- Job and department information
+- Compensation information
+- Satisfaction metrics
+- Work experience and tenure
+- Attrition status
+
+### Data Quality Checks
+
+The dataset was checked for:
+
+- Missing values
+- Duplicate records
+- Duplicate employee identifiers
+- Constant/non-analytical columns
+
+Results:
+
+- Missing values: 0
+- Duplicate rows: 0
+- Duplicate EmployeeNumber values: 0
+- Employee records: 1,470
+
+---
+
+## 4. SQL Analysis
+
+MySQL was used to perform structured business analysis.
+
+Key SQL analyses included:
+
+- Workforce overview
+- Attrition by department
+- Attrition by job role
+- Overtime vs attrition
+- Income band vs attrition
+- Job satisfaction vs attrition
+- Work-life balance vs attrition
+- Tenure vs attrition
+- Promotion gap vs attrition
+- Manager tenure vs attrition
+- Overtime + job satisfaction
+- Overtime + job role
+- Department + compensation
+- Job role + compensation
+
+SQL was used to calculate employee counts, employees who left, attrition rates, average income, and average tenure.
+
+---
+
+## 5. Python Exploratory Data Analysis
+
+Python was used for exploratory data analysis using:
+
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+
+EDA covered:
+
+- Dataset structure
+- Data quality
+- Attrition distribution
+- Department analysis
+- Job role analysis
+- Overtime analysis
+- Job satisfaction
+- Environment satisfaction
+- Age distribution
+- Monthly income
+- Years at company
+- Job level
+- Business travel
+- Distance from home
+- Correlation analysis
+- Combined overtime and job satisfaction analysis
+
+An `AttritionFlag` variable was also created to support numerical correlation analysis.
+
+---
+
+## 6. Power BI Dashboard
+
+Power BI was used to create an interactive workforce analytics dashboard.
+
+### Dashboard Pages
+
+#### 1. Workforce Overview
+
+Provides a high-level view of:
+
+- Total employees
+- Employees who left
+- Employees retained
+- Attrition rate
+- Average age
+- Average monthly income
+- Average years at company
+- Department-level attrition
+- Job-role attrition
+- Overtime attrition
+- Job satisfaction
+
+#### 2. Attrition Drivers
+
+Explores workforce factors associated with employee attrition:
+
+- Overtime
+- Business travel
+- Job level
+- Promotion gap
+- Environment satisfaction
+
+#### 3. Employee & Tenure Analysis
+
+Examines:
+
+- Tenure-based attrition
+- Age distribution
+- Income distribution
+- Distance from home
+- Department workforce summary
+
+#### 4. Executive Summary
+
+Provides an executive-level view of:
+
+- Workforce KPIs
+- Department attrition
+- Overtime attrition
+- Key workforce insights
+- Recommended focus areas
+
+---
+
+## 7. Key Findings
+
+### Overall Workforce
+
+- Total employees: 1,470
+- Employees who left: 237
+- Employees retained: 1,233
+- Overall attrition rate: 16.12%
+- Average age: 36.92 years
+- Average monthly income: 6,502.93
+- Average years at company: 7.01 years
+
+### Overtime
+
+Employees working overtime show a substantially higher observed attrition rate:
+
+- Overtime: 30.53%
+- No overtime: 10.44%
+
+This makes overtime an important workforce indicator to investigate.
+
+### Department
+
+Sales shows the highest department-level observed attrition at approximately 20.6%, followed by HR, while R&D has a lower observed attrition rate.
+
+### Employee Age
+
+Employees who left had a lower average age than employees who stayed:
+
+- Employees who left: approximately 33.6 years
+- Employees who stayed: approximately 37.6 years
+
+### Tenure
+
+Attrition differs across employee tenure groups, with early-tenure employees showing notably higher observed attrition.
+
+### Satisfaction
+
+Lower job and workplace satisfaction groups show higher observed attrition rates compared with higher satisfaction groups.
+
+---
+
+## 8. Business Recommendations
+
+### 1. Review Overtime Patterns
+
+Investigate workload distribution, overtime frequency, and team-level workload where elevated attrition is observed.
+
+### 2. Focus on Department-Level Retention
+
+Sales and HR show relatively higher observed attrition. Further investigation into department-specific employee experience and working conditions can help identify retention opportunities.
+
+### 3. Improve Career Progression Visibility
+
+Review promotion timelines and career development opportunities, particularly for employees experiencing longer promotion gaps.
+
+### 4. Monitor Employee Experience
+
+Track job satisfaction, environment satisfaction, work-life balance, and related workforce indicators alongside attrition.
+
+### 5. Focus on Early-Tenure Employees
+
+Develop stronger onboarding, mentoring, and early-career support programs for employees in their initial years at the company.
+
+---
+
+## 9. Tools & Technologies
+
+### Data Analysis
+
+- SQL
+- MySQL
+- Python
+- Pandas
+- NumPy
+
+### Data Visualization
+
+- Matplotlib
+- Seaborn
+- Power BI
+
+### Business Intelligence
+
+- Power BI
+- DAX
+- Data Modeling
+- Interactive Dashboard Design
+
+---
+
+## 10. Project Structure
+
+```text
+Workforce Analytics/
+│
+├── data/
+│   └── WA_Fn-UseC_-HR-Employee-Attrition.csv
+│
+├── SQL/
+│   └── hr_analysis.sql
+│
+├── python/
+│   └── hr_analytics_eda.ipynb
+│
+├── powerbi/
+│   └── WorkforceIQ.pbix
+│
+├── screenshots/
+│   ├── workforce-overview.png
+│   ├── attrition-drivers.png
+│   ├── employee-tenure-analysis.png
+│   └── executive-summary.png
+│
+└── documentation/
+    └── project-documentation.md
